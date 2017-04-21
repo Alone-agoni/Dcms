@@ -1,0 +1,18 @@
+[ 2017-04-20T09:57:11+08:00 ] 127.0.0.1 /undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002304s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003176s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003241s ]
+ERR: 无法加载控制器:Undefined
+
+[ 2017-04-20T10:00:34+08:00 ] 127.0.0.1 /undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002699s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002971s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003018s ]
+ERR: 无法加载控制器:Undefined
+
