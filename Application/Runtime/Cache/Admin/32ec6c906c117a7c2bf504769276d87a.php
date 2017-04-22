@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<title>『ぼ瘋吙隵豬猴』后台登录</title>
+		<title>『Alone-agoni』</title>
 		<link rel="stylesheet" type="text/css" href="/Public/Admin/plugins/layui/css/layui.css" media="all" />
 		<link rel="stylesheet" type="text/css" href="/Public/Admin/css/login.css" />
 	</head>
@@ -14,7 +14,7 @@
 	<body class="beg-login-bg">
 		<div class="beg-login-box">
 			<header>
-				<h1>『ぼ瘋吙隵豬猴』后台管理系统</h1>
+				<h1>『Alone-agoni』后台管理系统</h1>
 			</header>
 			<div class="beg-login-main">
 				<form action="/manage/login" class="layui-form" method="post">
@@ -44,7 +44,7 @@
 				</form>
 			</div>
 			<footer>
-				<p>『ぼ瘋吙隵豬猴』 © </p>
+				<p>『Alone-agoni』Wei.Ding © </p>
 			</footer>
 		</div>
 		
@@ -59,19 +59,19 @@
 				form.on('submit(login)',function(data){
 					var userName = $("#userName").val();
 					if($.trim(userName) == ""){
-						layer.tips("请输入登录名!", "#userName");
+						layer.tips("Please enter user name!", "#userName");
 						$("#userName").focus();
 						return false;
 					}
 					var password = $("#password").val();
 					if($.trim(password) == ""){
-						layer.tips("请输入密码!", "#password");
+						layer.tips("Please enter password!", "#password");
 						$("#password").focus();
 						return false;
 					}
 					var verify = $("#verify").val();
 					if($.trim(verify) == ""){
-						layer.tips("请输入验证码!", "#verify");
+						layer.tips("Please enter verify!", "#verify");
 						$("#verify").focus();
 						return false;
 					}

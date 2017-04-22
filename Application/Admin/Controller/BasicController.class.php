@@ -7,7 +7,7 @@ class BasicController extends Controller
 {
 	function _initialize()
 	{
-		if(session('UID') == null){
+		if(session('U_ID') == null){
 			$this->redirect("Login/index");
 		}
 	}

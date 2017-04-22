@@ -1,75 +1,75 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>『ぼ瘋吙隵豬猴』后台管理</title>
-		<link rel="stylesheet" type="text/css" href="plugins/layui/css/layui.css" media="all" />
-		<link rel="stylesheet" type="text/css" href="__ADMIN__/css/global.css" media="all">
-		<link rel="stylesheet" type="text/css" href="__ADMIN__/css/main.css" />
-		<link rel="stylesheet" type="text/css" href="__ADMIN__/css/table.css" />
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title>『Alone-agoni』</title>
+    <link rel="stylesheet" type="text/css" href="__ADMIN__/plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="__ADMIN__/css/global.css" media="all">
+    <link rel="stylesheet" type="text/css" href="__ADMIN__/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="__ADMIN__/css/table.css"/>
+</head>
 
-	<body>
-		<div class="admin-main">
-			<fieldset class="layui-elem-field">
-				<legend>系统信息</legend>
-				<div class="layui-field-box">
-					<table class="site-table table-hover">
-					  <colgroup>
-						<col width="25%">
-						<col width="25%">
-						<col width="25%">
-						<col>
-					  </colgroup>
-						<tbody>
-							<tr>
-								<td>操作系统</td>
-								<td></td>
-								<td>运行环境</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>PHP运行方式</td>
-								<td></td>
-								<td>ThinkPHP版本</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>上传附件限制</td>
-								<td></td>
-								<td>执行时间限制</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>服务器时间</td>
-								<td></td>
-								<td>北京时间</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>服务器域名/IP</td>
-								<td></td>
-								<td>剩余空间</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>register_globals</td>
-								<td></td>
-								<td>magic_quotes_gpc</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>magic_quotes_runtime</td>
-								<td></td>
-								<td>剩余空间</td>
-								<td></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</fieldset>
-		</div>
-	</body>
+<body>
+<div class="admin-main">
+    <fieldset class="layui-elem-field">
+        <legend>系统信息</legend>
+        <div class="layui-field-box">
+            <table class="site-table table-hover">
+                <colgroup>
+                    <col width="25%">
+                    <col width="25%">
+                    <col width="25%">
+                    <col>
+                </colgroup>
+                <tbody>
+                <tr>
+                    <td>操作系统</td>
+                    <td>{$info['operating_system']}</td>
+                    <td>运行环境</td>
+                    <td>{$info['runtime_environment']}</td>
+                </tr>
+                <tr>
+                    <td>PHP运行方式</td>
+                    <td>{$info['operation_mode']}</td>
+                    <td>ThinkPHP版本</td>
+                    <td>{$info['thinkphp_version']}</td>
+                </tr>
+                <tr>
+                    <td>上传附件限制</td>
+                    <td>{$info['upload_limit']}</td>
+                    <td>执行时间限制</td>
+                    <td>{$info['execution_time_limit']}</td>
+                </tr>
+                <tr>
+                    <td>服务器时间</td>
+                    <td>{$info['server_time']}</td>
+                    <td>北京时间</td>
+                    <td>{$info['beijing_time']}</td>
+                </tr>
+                <tr>
+                    <td>服务器域名/IP</td>
+                    <td>{$info['server_domain_name']}</td>
+                    <td>剩余空间</td>
+                    <td>{$info['free_space']}</td>
+                </tr>
+                <tr>
+                    <td>register_globals</td>
+                    <td>{$info['register_globals']}</td>
+                    <td>magic_quotes_gpc</td>
+                    <td>{$info['magic_quotes_gpc']}</td>
+                </tr>
+                <tr>
+                    <td>magic_quotes_runtime</td>
+                    <td>{$info['magic_quotes_runtime']}</td>
+                    <td>Developer</td>
+                    <td>{$info['developer']}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+</div>
+</body>
 
 </html>
