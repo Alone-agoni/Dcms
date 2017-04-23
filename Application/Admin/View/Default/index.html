@@ -41,7 +41,7 @@
                     <a href="javascript:;">登录次数:{:session('LOGIN_NUMBER')}</a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">清除缓存</a>
+                    <a href="javascript:;" onclick="clearCache()">清除缓存</a>
                 </li>
                 <li class="layui-nav-item">
                     <a target="_blank" href="/">浏览网站</a>
@@ -104,6 +104,22 @@
     <script type="text/javascript" src="__ADMIN__/plugins/layui/layui.js"></script>
     <script type="text/javascript" src="__ADMIN__/datas/nav.js"></script>
     <script type="text/javascript" src="__ADMIN__/js/index.js"></script>
+    <script type="text/javascript">
+        function clearCache() {
+            layui.use(['layer'], function () {
+                var layer = layui.layer,
+                        $ = layui.jquery;
+
+                layer.confirm("Are you sure clear cache?", function (index) {
+                    $.post("{:U('Default/clearCache')}", {}, function (info) {
+                        layer.msg(info.msg);
+                    }, "json");
+                    layer.close(index);
+                });
+            });
+
+        }
+    </script>
 </div>
 </body>
 

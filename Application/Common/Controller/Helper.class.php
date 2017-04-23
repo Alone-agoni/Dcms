@@ -22,6 +22,23 @@ class Helper
         return $response;
     }
 
+    public static function cc()
+    {
+        $adminCache = "./Application/Runtime/Cache/Admin/";
+        if (is_dir($adminCache)) {
+            //打开文件
+            if ($dh = opendir($adminCache)) {
+                //遍历文件目录名称
+                while (($file = readdir($dh)) != false) {
+                    //逐一进行删除
+                    unlink($adminCache . $file);
+                }
+                //关闭文件
+                closedir($dh);
+            }
+        }
+    }
+
     public static function dd($params, $die = true)
     {
         echo "<pre>";

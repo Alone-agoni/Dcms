@@ -15,4 +15,11 @@ class DefaultController extends BasicController
         $this->info = Helper::systemInfo();
         $this->display();
     }
+
+    public function clearCache()
+    {
+        $response = Helper::ajaxResponse('Clear cache success!',6);
+        Helper::cc();
+        $this->ajaxReturn($response);
+    }
 }
