@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 
 <html>
 
@@ -12,8 +12,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
 
-    <link rel="stylesheet" href="__ADMIN__/plugins/layui/css/layui.css" media="all"/>
-    <link rel="stylesheet" href="__ADMIN__/css/global.css" media="all">
+    <link rel="stylesheet" href="/Public/Admin/plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="/Public/Admin/css/global.css" media="all">
     <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
 
 </head>
@@ -32,13 +32,13 @@
             </div>
             <ul class="layui-nav admin-header-item">
                 <li class="layui-nav-item">
-                    <a href="javascript:;">上次登录时间:{:session('LAST_LOGIN')}</a>
+                    <a href="javascript:;">上次登录时间:<?php echo session('LAST_LOGIN');?></a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">上次登录IP地址:{:session('LOGIN_IP')}</a>
+                    <a href="javascript:;">上次登录IP地址:<?php echo session('LOGIN_IP');?></a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">登录次数:{:session('LOGIN_NUMBER')}</a>
+                    <a href="javascript:;">登录次数:<?php echo session('LOGIN_NUMBER');?></a>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;" onclick="clearCache()">清除缓存</a>
@@ -48,15 +48,15 @@
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;" class="admin-header-user">
-                        <img src="__ADMIN__/images/0.jpg"/>
-                        <span>{:session('U_NAME')}</span>
+                        <img src="/Public/Admin/images/0.jpg"/>
+                        <span><?php echo session('U_NAME');?></span>
                     </a>
                     <dl class="layui-nav-child">
                         <dd>
                             <a href="javascript:;" onclick="userInfo()"><i class="fa fa-gear" aria-hidden="true"></i> 个人信息</a>
                         </dd>
                         <dd>
-                            <a href="{:U('Login/logout')}"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
+                            <a href="<?php echo U('Login/logout');?>"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
                         </dd>
                     </dl>
                 </li>
@@ -81,7 +81,7 @@
             </ul>
             <div class="layui-tab-content" style="min-height: 150px; padding: 5px 0 0 0;">
                 <div class="layui-tab-item layui-show">
-                    <iframe src="{:U('Default/dashboard')}"></iframe>
+                    <iframe src="<?php echo U('Default/dashboard');?>"></iframe>
                 </div>
             </div>
         </div>
@@ -98,9 +98,9 @@
     </div>
     <div class="site-mobile-shade"></div>
 
-    <script type="text/javascript" src="__ADMIN__/plugins/layui/layui.js"></script>
-    <script type="text/javascript" src="__ADMIN__/datas/nav.js"></script>
-    <script type="text/javascript" src="__ADMIN__/js/index.js"></script>
+    <script type="text/javascript" src="/Public/Admin/plugins/layui/layui.js"></script>
+    <script type="text/javascript" src="/Public/Admin/datas/nav.js"></script>
+    <script type="text/javascript" src="/Public/Admin/js/index.js"></script>
     <script type="text/javascript">
         function clearCache() {
             layui.use(['layer'], function () {
@@ -108,7 +108,7 @@
                         $ = layui.jquery;
 
                 layer.confirm("Are you sure clear cache?", function (index) {
-                    $.post("{:U('Default/clearCache')}", {}, function (info) {
+                    $.post("<?php echo U('Default/clearCache');?>", {}, function (info) {
                         layer.msg(info.msg);
                     }, "json");
                     layer.close(index);
@@ -125,7 +125,7 @@
                     type: 2,
                     title: "个人信息",
                     area: ['800px', '600px'],
-                    content: "{:U('Default/userInfo')}"
+                    content: "<?php echo U('Default/userInfo');?>" //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
                 });
             });
         }
