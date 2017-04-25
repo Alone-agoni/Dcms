@@ -2,6 +2,7 @@
 namespace Home\Controller;
 
 use Think\Controller;
+use Common\Controller\Helper;
 
 class DefaultController extends Controller
 {
